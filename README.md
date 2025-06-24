@@ -1,42 +1,40 @@
-# FFCS On The Go
+# FFCS By ECM27
 
-[![Netlify Status](https://img.shields.io/netlify/6d48d2f4-8dc7-4780-ae32-e8da62053826)](https://app.netlify.com/sites/ffcsonthego/deploys) ![Last Update - Vellore](https://img.shields.io/badge/dynamic/json?color=blue&label=vellore&query=$.lastUpdate.vellore&url=https://raw.githubusercontent.com/vatz88/FFCSonTheGo/master/package.json) ![Last Update - Chennai](https://img.shields.io/badge/dynamic/json?color=blue&label=chennai&query=$.lastUpdate.chennai&url=https://raw.githubusercontent.com/vatz88/FFCSonTheGo/master/package.json) ![Last Update - AP](https://img.shields.io/badge/dynamic/json?color=blue&label=ap&query=$.lastUpdate.ap&url=https://raw.githubusercontent.com/vatz88/FFCSonTheGo/master/package.json) [![License](https://img.shields.io/github/license/vatz88/FFCSonTheGo)](/LICENSE.md)
+A public web application for VIT FFCS course registration and timetable management.
 
-This web application is a tool to visualize your timetable for the students of VIT Vellore & Chennai to help with FFCS course registrations.
+## About
 
-![Demo](/demo.gif)
+This is a modified version of the FFCS timetable management system, customized for ECM27. The application helps students:
+- Plan their course schedule
+- Visualize timetable conflicts
+- Manage course selections efficiently
 
-## Links
+## Access
 
-This application has been deployed at the following links.
+This is a public application - no authentication required. You can access it directly at your Vercel deployment URL.
 
--   https://ffcsonthego.vatz88.in/ - Currently used
--   https://ffcsonthego-archive.vatz88.in/ - Used until **Winter Semester 2018-19**
+## Features
 
-## Contributing
+- Easy course selection interface
+- Real-time timetable visualization
+- Conflict detection
+- Course credits tracking
+- Mobile-responsive design
 
-Anyone and everyone is welcome to contribute. Please take a moment to review our [code of conduct](/.github/CODE_OF_CONDUCT.md).
+## Development
 
-### Issues
+To run this project locally:
 
-If you've caught a bug or you'd like a new feature to be added, feel free to open an issue so that the same can be discussed.
-
-### Pull Requests
-
-If you're interested in contributing to our code, refer the [contributing guidlines](/.github/CONTRIBUTING.md) before opening a pull request.
-
-## Authors
-
--   **Vatsal Joshi** (Initial work) - [@vatz88](https://github.com/vatz88)
--   **Sangeeth Sudheer** - [@sangeeth96](https://github.com/sangeeth96)
-
-## Contributors
-
--   **Sujit Kumar** (Active maintainer) - [@therealsujitk](https://github.com/therealsujitk)
--   **Sanket Mohapatra** - [@sanket9918](https://github.com/sanket9918)
-
-See also the list of [contributors](https://github.com/vatz88/FFCSonTheGo/contributors) who participated in this project.
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm start
+   ```
 
 ## License
 
-This project is licensed under [the GNU General Public License](/LICENSE.md).
+This project is open source and available for public use.

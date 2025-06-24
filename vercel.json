@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "public": true,
+    "builds": [
+        {
+            "src": "dist/**",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/dist/$1"
+        }
+    ],
+    "github": {
+        "silent": true
+    }
+} 
