@@ -1,0 +1,11 @@
+[build]
+  command = "yarn install --ignore-engines && yarn build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 
