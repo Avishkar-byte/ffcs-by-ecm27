@@ -1,0 +1,40 @@
+/*
+ *  These are the colours used throughout the application
+ *  confined in one place so that they can be changed easily
+ */
+
+$colors-dark: (
+    primary: #9333EA,
+    primary-dark: #7E22CE,
+    primary-light: #A855F7,
+    background: #0F172A,
+    background-secondary: #1E293B,
+    text: #F8FAFC,
+    text-light: #94A3B8,
+    table-border: #334155,
+    input-text: #F1F5F9,
+    input-border: #334155,
+    input-border-active: #7E22CE,
+    input-border-shadow: rgba(147, 51, 234, 0.25),
+    slot-button-selected: #7E22CE,
+    quick-button: #F59E0B,
+    quick-button-highlight: #22C55E,
+    lab: #3B82F6,
+    theory: #8B5CF6,
+    day-lunch: #475569,
+    period: #1E293B,
+    period-highlight: #22C55E,
+    period-clash: #EF4444,
+    on-clash: #F8FAFC,
+    course-list-header-hover: #334155,
+    card-bg: #1E293B,
+    navbar-bg: rgba(15, 23, 42, 0.9),
+    footer-bg: #0F172A,
+    border: #334155
+);
+
+:root {
+    @each $name, $color in $colors-dark {
+        --#{$name}-color: #{$color};
+    }
+}
