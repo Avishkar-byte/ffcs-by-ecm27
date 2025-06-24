@@ -1,22 +1,21 @@
 {
     "version": 2,
     "public": true,
-    "builds": [
-        {
-            "src": "package.json",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "dist"
-            }
-        }
-    ],
+    "buildCommand": "yarn install --ignore-engines && yarn build",
+    "outputDirectory": "dist",
     "routes": [
         {
-            "src": "/(.*)",
+            "src": "/[^.]+",
+            "dest": "/",
+            "status": 200
+        },
+        {
+            "src": "/(.+)",
             "dest": "/$1"
         }
     ],
     "github": {
         "silent": true
     }
+} 
 } 
