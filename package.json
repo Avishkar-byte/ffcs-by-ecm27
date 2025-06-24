@@ -1,11 +1,13 @@
 {
-    "name": "FFCSbyECM27",
+    "name": "FFCSonTheGo",
     "version": "1.0.0",
     "lastUpdate": {
-        "chennai": "Fall Semester 2025-2026"
+        "vellore": "Winter Semester 2022 (Freshers)",
+        "chennai": "Fall Semester 2025-26",
+        "ap": "Fall Semester 2023-24"
     },
     "repository": "https://github.com/vatz88/FFCSonTheGo.git",
-    "author": "ECM 27",
+    "author": "Vatsal Joshi <vatz88@gmail.com>",
     "license": "GPL-3.0",
     "private": true,
     "scripts": {

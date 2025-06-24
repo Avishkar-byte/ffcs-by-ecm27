@@ -157,7 +157,7 @@ $(() => {
                 .attr('href', canvas.toDataURL('image/jpeg'))
                 .attr(
                     'download',
-                    `FFCS by ECM 27 ${activeTable.name} (Timetable).jpg`,
+                    `FFCS On The Go ${activeTable.name} (Timetable).jpg`,
                 );
 
             $('body').append($a);
@@ -229,7 +229,7 @@ $(() => {
                 .attr('href', canvas.toDataURL('image/jpeg'))
                 .attr(
                     'download',
-                    `FFCS by ECM 27 ${activeTable.name} (Course List).jpg`,
+                    `FFCS On The Go ${activeTable.name} (Course List).jpg`,
                 );
 
             $('body').append($a);

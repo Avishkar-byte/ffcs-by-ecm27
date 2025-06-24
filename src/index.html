@@ -7,33 +7,38 @@
             name="viewport"
             content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
         />
-        <title>FFCS by ECM 27</title>
+        <title>FFCS By ECM27</title>
         <link rel="manifest" href="./manifest.webmanifest" />
+        <link
+            rel="icon"
+            sizes="192x192"
+            href="./images/icons/icon-192x192.png"
+        />
+        <link rel="apple-touch-icon" href="./images/icons/icon-192x192.png" />
         <link rel="icon" href="./images/favicon.png" />
         <script src="./js/main.js" type="module"></script>
-        <meta name="author" content="ECM 27" />
+        <meta name="author" content="ECM27" />
         <meta name="subject" content="Education" />
         <meta
             name="Description"
-            content="FFCS Timetable Planner by ECM 27 - Course registration tool for VIT"
+            content="FFCS By ECM27"
         />
         <meta
             name="Keywords"
-            content="VIT,University,Chennai,FFCS,ECM 27,course,registration,timetable"
+            content="FFCS By ECM27"
         />
         <meta name="distribution" content="Global" />
         <meta name="country" content="India" />
-        <meta name="theme-color" content="#0F172A" />
-        <meta property="og:title" content="FFCS by ECM 27" />
+        <meta name="theme-color" content="#9C27B0" />
+        <meta property="og:title" content="FFCS By ECM27" />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ffcsonthego.vatz88.in/" />
+        <meta property="og:image" content="./images/og_image.png" />
         <meta
             property="og:description"
-            content="FFCS Timetable Planner by ECM 27 - Course registration tool for VIT"
+            content="FFCS By ECM27"
         />
-        <meta property="og:site_name" content="FFCS by ECM 27" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <meta property="og:site_name" content="FFCS By ECM27" />
     </head>
 
     <body>
@@ -65,7 +70,7 @@
                             ).show();
                         } else {
                             var result = window.confirm(
-                                'A new version of FFCS by ECM 27 is available! Would you like to reload the page?',
+                                'A new version of FFCS On The Go is available! Would you like to reload the page?',
                             );
                             if (result) {
                                 window.location.reload();
@@ -76,12 +81,35 @@
             }
         </script>
 
+        <!-- Google Analytics -->
+        <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                (i[r] =
+                    i[r] ||
+                    function () {
+                        (i[r].q = i[r].q || []).push(arguments);
+                    }),
+                    (i[r].l = 1 * new Date());
+                (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m);
+            })(
+                window,
+                document,
+                'script',
+                '//www.google-analytics.com/analytics.js',
+                'ga',
+            );
+            ga('create', 'UA-75111209-1', 'auto');
+            ga('send', 'pageview');
+        </script>
+
         <!-- Navbar -->
-        <nav class="navbar fixed-top navbar-expand-md navbar-dark">
-            <div class="container-xl px-3 py-2">
-                <a class="navbar-brand" href="/">
-                    FFCS by ECM 27
-                </a>
+        <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
+            <div class="container-xl px-3 py-1">
+                <a class="navbar-brand" href="/">FFCS By ECM27</a>
                 <button
                     class="navbar-toggler"
                     type="button"
@@ -107,229 +135,256 @@
                             >Chennai Campus</a>
                         </li>
                     </ul>
+                    <div class="navbar-nav flex-row flex-wrap ms-md-auto">
+                        <!-- Removed Share and GitHub buttons -->
+                    </div>
                 </div>
             </div>
         </nav>
         <!-- End of navbar -->
 
-        <!-- Main content -->
-        <div class="container-xxl px-3">
-            <div class="row">
-                <!-- Course list -->
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Course List</h5>
+        <!-- #1 - Course Panel -->
+        <div class="container-xl">
+            <div class="card">
+                <div class="card-header text-center fw-bold">
+                    Search Courses
+                </div>
+                <div class="card-body">
+                    <form id="course-panel" class="container">
+                        <div class="row gy-3">
+                            <div class="col-lg-9 col-12">
+                                <label for="course-input" class="form-label"
+                                    >Course</label
+                                >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="course-input"
+                                    placeholder="CSE1001 or Problem Solving and Programming"
+                                />
+                            </div>
+
+                            <div class="col-lg-3 col-12">
+                                <label for="slot-filter" class="form-label"
+                                    >Filter By Slot</label
+                                >
+                                <select
+                                    id="slot-filter"
+                                    class="selectpicker"
+                                    data-width="100%"
+                                    data-live-search="true"
+                                    data-live-search-placeholder="Search for a slot"
+                                    multiple
+                                    disabled
+                                ></select>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <div class="text-center">
-                                <button class="btn btn-primary" onclick="downloadCourseList()">
-                                    <i class="fas fa-download"></i>&nbsp;&nbsp;Download Course List - FFCS by ECM 27
+
+                        <div class="row mt-2">
+                            <div class="col-12">
+                                <blockquote>
+                                    <p class="text-black-50 fs-6 fw-light">
+                                        Search for a course, select a slot and
+                                        click the button below or double click
+                                        the slot to add it to your timetable.
+                                    </p>
+                                </blockquote>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div id="slot-buttons"></div>
+                        </div>
+
+                        <div class="row mt-1 mb-3">
+                            <div class="col-12 text-center">
+                                <button
+                                    id="advanced-toggle"
+                                    type="button"
+                                    class="btn btn-outline-secondary"
+                                >
+                                    Show Advanced Options
                                 </button>
                             </div>
-                            <form id="course-panel" class="container">
-                                <div class="row gy-3">
-                                    <div class="col-lg-9 col-12">
-                                        <label for="course-input" class="form-label"
-                                            >Course</label
-                                        >
-                                        <input
-                                            type="text"
-                                            class="form-control"
-                                            id="course-input"
-                                            placeholder="CSE1001 or Problem Solving and Programming"
-                                        />
-                                    </div>
+                        </div>
 
-                                    <div class="col-lg-3 col-12">
-                                        <label for="slot-filter" class="form-label"
-                                            >Filter By Slot</label
-                                        >
-                                        <select
-                                            id="slot-filter"
-                                            class="selectpicker"
-                                            data-width="100%"
-                                            data-live-search="true"
-                                            data-live-search-placeholder="Search for a slot"
-                                            multiple
-                                            disabled
-                                        ></select>
-                                    </div>
-                                </div>
-
-                                <div class="row mt-2">
-                                    <div class="col-12">
-                                        <blockquote>
-                                            <p class="text-black-50 fs-6 fw-light">
-                                                Search for a course, select a slot and
-                                                click the button below or double click
-                                                the slot to add it to your timetable.
-                                            </p>
-                                        </blockquote>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div id="slot-buttons"></div>
-                                </div>
-
-                                <div class="row mt-1 mb-3">
-                                    <div class="col-12 text-center">
-                                        <button
-                                            id="advanced-toggle"
-                                            type="button"
-                                            class="btn btn-outline-secondary"
-                                        >
-                                            Show Advanced Options
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div
-                                    id="advanced-options"
-                                    class="row my-2"
-                                    style="display: none"
+                        <div
+                            id="advanced-options"
+                            class="row my-2"
+                            style="display: none"
+                        >
+                            <div class="col-6 col-md-3">
+                                <label for="slot-input" class="form-label"
+                                    >Slot</label
                                 >
-                                    <div class="col-6 col-md-3">
-                                        <label for="slot-input" class="form-label"
-                                            >Slot</label
-                                        >
-                                        <input
-                                            id="slot-input"
-                                            class="form-control text-uppercase"
-                                            type="text"
-                                            autocomplete="off"
-                                            placeholder="A1+TA1"
-                                        />
-                                    </div>
-                                    <div class="col-6 col-md-3">
-                                        <label for="faculty-input" class="form-label"
-                                            >Faculty</label
-                                        >
-                                        <input
-                                            id="faculty-input"
-                                            class="form-control text-uppercase"
-                                            type="text"
-                                            autocomplete="off"
-                                            placeholder="JOHN DOE"
-                                        />
-                                    </div>
-                                    <div class="col-6 col-md-3">
-                                        <label for="venue-input" class="form-label"
-                                            >Venue</label
-                                        >
-                                        <input
-                                            id="venue-input"
-                                            class="form-control text-uppercase"
-                                            type="text"
-                                            autocomplete="off"
-                                            placeholder="SJTG01"
-                                        />
-                                    </div>
-                                    <div class="col-6 col-md-3">
-                                        <label for="credits-input" class="form-label"
-                                            >Credits</label
-                                        >
-                                        <input
-                                            id="credits-input"
-                                            class="form-control text-uppercase"
-                                            type="number"
-                                            autocomplete="off"
-                                            placeholder="4"
-                                        />
-                                    </div>
-
-                                    <!-- This input field is to store whether the selected option is a project -->
-                                    <input
-                                        id="inputIsProject"
-                                        type="hidden"
-                                        value="false"
-                                    />
-                                </div>
-                            </form>
-                        </div>
-
-                        <div class="card-footer">
-                            <div class="row align-items-center justify-content-between">
-                                <div class="col-sm-auto my-1 text-center">
-                                    <span id="last-update" class="fw-bold"></span>
-                                </div>
-
-                                <div class="col-sm-auto my-1 text-center">
-                                    <button
-                                        id="clear-panel-button"
-                                        type="button"
-                                        class="btn btn-light me-1"
-                                    >
-                                        Clear
-                                    </button>
-                                    <button
-                                        id="add-course-button"
-                                        type="button"
-                                        class="btn btn-success"
-                                    >
-                                        Add Course
-                                    </button>
-                                </div>
+                                <input
+                                    id="slot-input"
+                                    class="form-control text-uppercase"
+                                    type="text"
+                                    autocomplete="off"
+                                    placeholder="A1+TA1"
+                                />
                             </div>
+                            <div class="col-6 col-md-3">
+                                <label for="faculty-input" class="form-label"
+                                    >Faculty</label
+                                >
+                                <input
+                                    id="faculty-input"
+                                    class="form-control text-uppercase"
+                                    type="text"
+                                    autocomplete="off"
+                                    placeholder="JOHN DOE"
+                                />
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label for="venue-input" class="form-label"
+                                    >Venue</label
+                                >
+                                <input
+                                    id="venue-input"
+                                    class="form-control text-uppercase"
+                                    type="text"
+                                    autocomplete="off"
+                                    placeholder="SJTG01"
+                                />
+                            </div>
+                            <div class="col-6 col-md-3">
+                                <label for="credits-input" class="form-label"
+                                    >Credits</label
+                                >
+                                <input
+                                    id="credits-input"
+                                    class="form-control text-uppercase"
+                                    type="number"
+                                    autocomplete="off"
+                                    placeholder="4"
+                                />
+                            </div>
+
+                            <!-- This input field is to store whether the selected option is a project -->
+                            <input
+                                id="inputIsProject"
+                                type="hidden"
+                                value="false"
+                            />
                         </div>
-                    </div>
+                    </form>
                 </div>
 
-                <!-- Timetable -->
-                <div class="col-md-8 mb-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Timetable</h5>
+                <div class="card-footer">
+                    <div class="row align-items-center justify-content-between">
+                        <div class="col-sm-auto my-1 text-center">
+                            <span id="last-update" class="fw-bold"></span>
                         </div>
-                        <div class="card-body">
-                            <div class="text-center mb-3">
-                                <button class="btn btn-primary" onclick="downloadTimetable()">
-                                    <i class="fas fa-download"></i>&nbsp;&nbsp;Download Timetable - FFCS by ECM 27
-                                </button>
-                            </div>
-                            <div class="container-xxl text-center noselect">
-                                <div id="timetable" class="table-responsive">
-                                    <table class="table table-bordered mt-2 mb-0">
-                                        <tr id="theory">
-                                            <td class="day">THEORY <br />HOURS</td>
-                                        </tr>
-                                        <tr id="lab">
-                                            <td class="day">LAB <br />HOURS</td>
-                                        </tr>
-                                        <tr id="mon" style="display: none">
-                                            <td class="day">MON</td>
-                                        </tr>
-                                        <tr id="tue" style="display: none">
-                                            <td class="day">TUE</td>
-                                        </tr>
-                                        <tr id="wed" style="display: none">
-                                            <td class="day">WED</td>
-                                        </tr>
-                                        <tr id="thu" style="display: none">
-                                            <td class="day">THU</td>
-                                        </tr>
-                                        <tr id="fri" style="display: none">
-                                            <td class="day">FRI</td>
-                                        </tr>
-                                        <tr id="sat" style="display: none">
-                                            <td class="day">SAT</td>
-                                        </tr>
-                                        <tr id="sun" style="display: none">
-                                            <td class="day">SUN</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
+
+                        <div class="col-sm-auto my-1 text-center">
+                            <button
+                                id="clear-panel-button"
+                                type="button"
+                                class="btn btn-light me-1"
+                            >
+                                Clear
+                            </button>
+                            <button
+                                id="add-course-button"
+                                type="button"
+                                class="btn btn-success"
+                            >
+                                Add Course
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- End of #1 - Course panel -->
 
-        <!-- Last update info -->
-        <div class="container text-center mt-3 mb-4">
-            <small class="text-muted">Last Updated: <span id="last-update"></span></small>
+        <hr />
+
+        <!-- #2 - Timetable -->
+        <!-- Option buttons for the timetable -->
+        <div class="container-sm px-4">
+            <div id="option-buttons" class="row justify-content-between">
+                <div class="col-auto mb-2 text-center">
+                    <div class="btn-group" role="group">
+                        <div class="btn-group">
+                            <button
+                                id="tt-picker-button"
+                                class="btn btn-primary dropdown-toggle"
+                                type="button"
+                                data-bs-toggle="dropdown"
+                                course-list
+                                table
+                                aria-expanded="false"
+                            >
+                                Default Table
+                            </button>
+                            <ul id="tt-picker-dropdown" class="dropdown-menu">
+                                <li>
+                                    <table class="dropdown-item">
+                                        <td class="tt-picker-label">
+                                            <a
+                                                href="JavaScript:void(0);"
+                                                data-table-id="0"
+                                                >Default Table</a
+                                            >
+                                        </td>
+                                        <td>
+                                            <a
+                                                class="tt-picker-rename"
+                                                href="JavaScript:void(0);"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#rename-modal"
+                                                ><i
+                                                    class="fas fa-pencil-alt"
+                                                ></i
+                                            ></a>
+                                        </td>
+                                    </table>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <button
+                            id="tt-picker-add"
+                            type="button"
+                            class="btn btn-primary"
+                        >
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-auto mb-2 text-center">
+                    <button
+                        class="btn btn-success"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#download-modal"
+                    >
+                        <i class="fas fa-download"></i>
+                        <span>&nbsp;&nbsp;Download Timetable</span>
+                    </button>
+                    <button
+                        id="quick-toggle"
+                        class="btn btn-warning ms-1 me-1"
+                        type="button"
+                    >
+                        <i class="fas fa-eye"></i>
+                        <span>&nbsp;&nbsp;Enable Quick Visualization</span>
+                    </button>
+                    <button
+                        class="btn btn-danger"
+                        type="button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#reset-modal"
+                    >
+                        <i class="fas fa-redo"></i>
+                        <span>&nbsp;&nbsp;Reset Table</span>
+                    </button>
+                </div>
+            </div>
         </div>
 
         <!-- Quick selection tiles - Morning slots -->
@@ -340,6 +395,42 @@
             <div><table></table></div>
         </div>
         <!-- End of quick selection tiles -->
+
+        <!-- Timetable -->
+        <div class="container-xxl text-center noselect">
+            <div id="timetable" class="table-responsive">
+                <table class="table table-bordered mt-2 mb-0">
+                    <tr id="theory">
+                        <td class="day">THEORY <br />HOURS</td>
+                    </tr>
+                    <tr id="lab">
+                        <td class="day">LAB <br />HOURS</td>
+                    </tr>
+                    <tr id="mon" style="display: none">
+                        <td class="day">MON</td>
+                    </tr>
+                    <tr id="tue" style="display: none">
+                        <td class="day">TUE</td>
+                    </tr>
+                    <tr id="wed" style="display: none">
+                        <td class="day">WED</td>
+                    </tr>
+                    <tr id="thu" style="display: none">
+                        <td class="day">THU</td>
+                    </tr>
+                    <tr id="fri" style="display: none">
+                        <td class="day">FRI</td>
+                    </tr>
+                    <tr id="sat" style="display: none">
+                        <td class="day">SAT</td>
+                    </tr>
+                    <tr id="sun" style="display: none">
+                        <td class="day">SUN</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <!-- End of timetable -->
 
         <!-- Quick selection tiles - Evening slots -->
         <div
@@ -404,11 +495,8 @@
         </div>
 
         <!-- Footer -->
-        <footer>
-            <div class="container">
-                <p class="mb-2">Built with 💜 by Programming Team of Team Namo Nirvana</p>
-                <p class="text-sm">Last Updated: <span id="last-update"></span></p>
-            </div>
+        <footer class="container-fluid text-center py-2">
+            <span>FFCS By ECM27</span>
         </footer>
         <!-- End of #3 -->
 
@@ -438,7 +526,7 @@
 
                     <div class="modal-body">
                         <p>
-                            A new version of FFCS by ECM 27 is available! Would
+                            A new version of FFCS On The Go is available! Would
                             you like to reload the page?
                         </p>
                     </div>
@@ -627,58 +715,6 @@
             </div>
         </div>
         <!-- End of reset modal -->
-
-        <!-- The Switch Campus Modal -->
-        <div
-            id="switch-campus-modal"
-            class="modal fade"
-            tabindex="-1"
-            aria-labelledby="switch-campus-modal-label"
-            aria-hidden="true"
-        >
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="switch-campus-modal-label">
-                            Switch Campus
-                        </h5>
-                        <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                        ></button>
-                    </div>
-
-                    <div class="modal-body">
-                        <p>
-                            Are you sure you want to switch your campus? All
-                            data will be lost.
-                        </p>
-                    </div>
-
-                    <div class="modal-footer">
-                        <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                            onclick="window.location.hash = `#${window.campus}`"
-                        >
-                            Cancel
-                        </button>
-                        <button
-                            type="button"
-                            class="btn btn-danger"
-                            data-bs-dismiss="modal"
-                            onclick="switchCampus()"
-                        >
-                            Yes, I'm sure
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End of switch campus modal -->
 
         <!-- The Download Timetable Modal -->
         <div

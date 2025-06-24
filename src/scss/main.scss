@@ -1,257 +1,106 @@
 /**
- *  Modern Gen Z styling with dark theme
+ *  This style sheet contains the custom styling applied
+ *  to the document body that is common to all sections
+ *  or that doesn't fit into any particular section
  */
 
 @import 'global/colors.scss';
 
-:root {
-    --primary-gradient: linear-gradient(135deg, var(--primary-color), var(--primary-dark-color));
-    --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --border-radius: 12px;
-    --glass-bg: rgba(30, 41, 59, 0.8);
-}
-
 body {
     padding-top: 5rem;
     background-color: var(--background-color);
-    color: var(--text-color) !important;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-/* Force text colors */
-.text-muted,
-.text-dark,
-p,
-span,
-div {
-    color: var(--text-color) !important;
-}
-
-.text-secondary {
-    color: var(--text-light-color) !important;
-}
-
-/* Table text colors */
-.table {
-    color: var(--text-color);
-}
-
-.table th,
-.table td {
-    color: var(--text-color) !important;
-}
-
-/* Form controls */
-.form-control {
-    color: var(--text-color) !important;
-    background-color: var(--background-secondary-color) !important;
-    border-color: var(--border-color);
-}
-
-.form-control:focus {
-    color: var(--text-color);
-    background-color: var(--background-secondary-color);
-    border-color: var(--primary-color);
-}
-
-/* Dropdown menus */
-.dropdown-menu {
-    background-color: var(--background-secondary-color);
-    border-color: var(--border-color);
-}
-
-.dropdown-item {
-    color: var(--text-color) !important;
-}
-
-.dropdown-item:hover {
-    background-color: var(--primary-color);
-    color: var(--text-color) !important;
 }
 
 /*
     Navigation bar
  */
 .navbar {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background: var(--navbar-bg) !important;
-    border-bottom: 1px solid var(--border-color);
-    box-shadow: var(--box-shadow);
+    box-shadow: 0 2px 5px #c2c6cc;
 }
 
 .navbar-brand {
-    color: var(--text-color) !important;
-    font-weight: 700;
-    font-size: 1.4rem;
-    letter-spacing: -0.5px;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-
-    img {
-        height: 32px;
-        width: auto;
-    }
-}
-
-.nav-link {
-    color: var(--text-light-color) !important;
-    font-weight: 500;
-    transition: var(--transition);
-
-    &:hover {
-        color: var(--primary-light-color) !important;
-    }
+    color: var(--primary-color) !important;
+    font-weight: bold;
 }
 
 .nav-btn-outline {
-    color: var(--primary-light-color);
-    border-color: var(--primary-light-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
     border-width: 2px;
-    border-radius: var(--border-radius);
-    padding: 0.75rem 1.25rem;
-    font-weight: 600;
-    transition: var(--transition);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
 }
 
 .nav-btn-outline:hover {
-    color: var(--text-color);
+    color: var(--background-color);
     border-color: var(--primary-color) !important;
-    background: var(--primary-gradient) !important;
-    transform: translateY(-2px);
-    box-shadow: var(--box-shadow);
+    background-color: var(--primary-color) !important;
+}
+
+.nav-btn-outline:active,
+.nav-btn-outline:focus,
+.nav-btn-outline.show {
+    color: var(--background-color);
+    border-color: var(--primary-dark-color) !important;
+    background-color: var(--primary-dark-color) !important;
 }
 
 /*
-    Table improvements
+    Custom blockquote
  */
-.table {
-    background: var(--card-bg);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--box-shadow);
-    border: 1px solid var(--border-color);
-}
-
-.table thead th {
-    background: var(--background-secondary-color);
-    color: var(--text-color);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 0.875rem;
-}
-
-.table tbody tr {
-    transition: var(--transition);
-}
-
-.table tbody tr:hover {
-    background-color: var(--background-secondary-color);
+blockquote > p::before {
+    content: '\f059';
+    font-family: 'Font Awesome 5 Free';
+    margin-right: 5px;
 }
 
 /*
-    Card styling
+    Overriding bootstrap table style
  */
-.card {
-    background: var(--card-bg);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--box-shadow);
-    transition: var(--transition);
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-}
-
-/*
-    Button improvements
- */
-.btn {
-    border-radius: var(--border-radius);
-    padding: 0.75rem 1.25rem;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    transition: var(--transition);
-}
-
-.btn-primary {
-    background: var(--primary-gradient);
-    border: none;
-    color: var(--text-color);
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--box-shadow);
+.table th,
+.table td {
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
 }
 
 /*
     Footer
  */
 footer {
-    background: var(--footer-bg);
-    color: var(--text-color);
-    padding: 3rem 0;
-    margin-top: 4rem;
-    border-top: 1px solid var(--border-color);
-    text-align: center;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
 
-    p {
-        color: var(--text-light-color);
-        margin: 0;
-    }
-
-    a {
-        color: var(--primary-light-color);
-        text-decoration: none;
-        transition: var(--transition);
-
-        &:hover {
-            color: var(--primary-color);
-        }
-    }
+/*
+    Disable text selection
+ */
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 /*
     Custom scrollbar
  */
 ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-    background: var(--background-secondary-color);
+    width: 10px;
+    height: 10px;
+    background: var(--primary-light-color);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--primary-gradient);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--background-color);
+    background: var(--primary-color);
 }
 
 @media (max-width: 768px) {
-    body {
-        padding-top: 4rem;
-    }
-    
-    .navbar-brand {
-        font-size: 1.2rem;
-        
-        img {
-            height: 28px;
-        }
-    }
-    
+    /*
+        Remove x-axis padding on smaller devices
+     */
     .container-xxl {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 0;
+        padding-right: 0;
     }
 }

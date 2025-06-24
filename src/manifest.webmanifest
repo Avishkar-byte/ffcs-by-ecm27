@@ -1,11 +1,12 @@
 {
-    "name": "FFCS by ECM 27",
-    "short_name": "FFCS ECM 27",
-    "theme_color": "#0F172A",
-    "background_color": "#0F172A",
+    "name": "FFCS By ECM27",
+    "short_name": "FFCS By ECM27",
+    "description": "FFCS By ECM27",
+    "theme_color": "#9c27b0",
+    "background_color": "#ffffff",
     "display": "standalone",
     "Scope": "/",
-    "start_url": "/?utm_source=homescreen",
+    "start_url": "./",
     "icons": [
         {
             "src": "images/icons/icon-72x72.png",

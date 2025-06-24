@@ -30,18 +30,45 @@ $(function () {
         $(this).trigger('blur');
     });
 
-    // Set Chennai as default campus
+    localforage.getItem('campus').then((campus) => {
+        window.location.hash = '#Chennai';
+        window.campus = 'Chennai';
+        $('#campus').text('Chennai Campus');
+        $('#last-update').text(lastUpdate.chennai);
+        
+        getCourses();
+        initializeTimetable();
+    });
+
+    Utils.removeTouchHoverCSSRule();
+});
+
+/*
+    Function to switch campuses (now only maintains Chennai)
+ */
+window.switchCampus = () => {
+    window.location.hash = '#Chennai';
     window.campus = 'Chennai';
     $('#campus').text('Chennai Campus');
     $('#last-update').text(lastUpdate.chennai);
     
-    localforage.setItem('campus', 'Chennai').then(() => {
-        getCourses();
-        initializeTimetable();
-    }).catch(console.error);
+    localforage.setItem('campus', 'Chennai').catch(console.error);
+    getCourses();
+    initializeTimetable();
+};
 
-    Utils.removeTouchHoverCSSRule();
-});
+/*
+    Redirect to the GitHub page when Ctrl + U is clicked
+    instead of showing the page source code
+ */
+document.onkeydown = function (e) {
+    if (e.ctrlKey && e.key == 'u') {
+        window.open('https://github.com/vatz88/FFCSonTheGo');
+        return false;
+    } else {
+        return true;
+    }
+};
 
 /*
     Function to clear all sections
